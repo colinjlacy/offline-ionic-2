@@ -1,23 +1,26 @@
 import {App, Platform} from 'ionic-framework/ionic';
-import {Page1} from './pages/page1/page1';
-import {Page2} from './pages/page2/page2';
-import {Page3} from './pages/page3/page3';
+import {List} from './pages/list/list.page';
+import {Create} from './pages/create/create.page';
+import {Edit} from './pages/edit/edit.page';
 
 
 @App({
-  templateUrl: 'build/app.html'
+    templateUrl: 'build/app.html'
 })
 export class MyApp {
-  constructor(platform: Platform) {
+    constructor(platform: Platform) {
 
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
-    this.tab1Root = Page1;
-    this.tab2Root = Page2;
-    this.tab3Root = Page3;
+        // this tells the tabs component which Pages
+        // should be each tab's root Page
+        this.tab1Root = List;
+        this.tab1Settings = new List();
+        this.tab2Root = Create;
+        this.tab2Settings = new Create();
+        this.tab3Root = Edit;
+        this.tab3Settings = new Edit();
 
-    platform.ready().then(() => {
-      // Do any necessary cordova or native calls here now that the platform is ready
-    });
-  }
+        platform.ready().then(() => {
+            // Do any necessary cordova or native calls here now that the platform is ready
+        });
+    }
 }
