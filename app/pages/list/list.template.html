@@ -1,7 +1,7 @@
 <ion-navbar *navbar>
 
 	<ion-buttons>
-		<button>
+		<button (click)="goToCreate()">
 			Add Item
 		</button>
 	</ion-buttons>
@@ -15,7 +15,7 @@
 
 	<ion-list>
 		<ion-list-header>Todo:</ion-list-header>
-		<ion-item *ngFor="#item of listItems">
+		<ion-item *ngFor="#item of listItems, #i=index" (click)="goToEdit(i)">
 			{{item.name}}
 		</ion-item>
 	</ion-list>
