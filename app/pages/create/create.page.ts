@@ -7,11 +7,9 @@ import {Page} from 'ionic-framework/ionic';
 export class Create {
     constructor() {
         this.title = "Create";
-        this.icon = "plus";
     }
 
     public title: string;
-    public icon: string;
 
     public item: {description: string, location: string} = {};
     public options: Array = [

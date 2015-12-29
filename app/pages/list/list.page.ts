@@ -11,11 +11,9 @@ import {ListItem} from '../../data/list-item.interface'
 export class List {
     constructor(private _service: ListItemService, public nav: NavController) {
         this.title = "List";
-        this.icon = "clipboard";
     }
 
     public title: string;
-    public icon: string;
     public listItems: ListItem[];
 
     ngOnInit() {
