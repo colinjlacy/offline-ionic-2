@@ -5,9 +5,11 @@ import {Page} from 'ionic-framework/ionic';
     templateUrl: 'build/pages/create/create.template.html',
 })
 export class Create {
-    public title = "Create";
-    public icon = "plus";
     constructor() {
-
+        this.title = "Create";
+        this.icon = "plus";
     }
+
+    public title: string;
+    public icon: string;
 }

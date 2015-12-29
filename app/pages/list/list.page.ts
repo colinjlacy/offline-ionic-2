@@ -1,18 +1,24 @@
 import {Page} from 'ionic-framework/ionic';
+import {OnInit} from 'angular2/core'
 
+import {ListItemService} from '../../data/list-item.service'
+import {ListItem} from '../../data/list-item.interface'
 
 @Page({
     templateUrl: 'build/pages/list/list.template.html',
+    providers: [ListItemService]
 })
 export class List {
-    constructor() {
-
+    constructor(private _service: ListItemService) {
+        this.title = "List";
+        this.icon = "clipboard";
     }
 
-    public title = "List";
+    public title: string;
+    public icon: string;
+    public listItems: ListItem[];
 
-    public icon = "clipboard";
-
-    public listItems = [
-    ]
+    ngOnInit() {
+        return this._service.getItems().then(items => this.listItems = items);
+    }
 }
