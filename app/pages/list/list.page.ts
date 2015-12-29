@@ -1,4 +1,4 @@
-import {Page} from 'ionic-framework/ionic';
+import {Page, NavController} from 'ionic-framework/ionic';
 import {OnInit} from 'angular2/core'
 
 import {ListItemService} from '../../data/list-item.service'
@@ -9,7 +9,7 @@ import {ListItem} from '../../data/list-item.interface'
     providers: [ListItemService]
 })
 export class List {
-    constructor(private _service: ListItemService) {
+    constructor(private _service: ListItemService, public nav: NavController) {
         this.title = "List";
         this.icon = "clipboard";
     }
