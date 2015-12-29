@@ -1,11 +1,11 @@
-import {Page} from 'ionic-framework/ionic';
+import {Page, NavController} from 'ionic-framework/ionic';
 
 
 @Page({
     templateUrl: 'build/pages/create/create.template.html',
 })
 export class Create {
-    constructor() {
+    constructor(public nav: NavController) {
         this.title = "Create";
     }
 
@@ -20,5 +20,6 @@ export class Create {
 
     public save() {
         console.log(this.item);
+        this.nav.pop();
     }
 }

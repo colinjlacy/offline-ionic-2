@@ -11,4 +11,8 @@ export class ListItemService {
     getItems() {
         return Promise.resolve(LIST_ITEMS);
     }
+
+    getItem(index) {
+        return Promise.resolve(LIST_ITEMS[index]);
+    }
 }
