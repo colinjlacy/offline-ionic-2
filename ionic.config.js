@@ -7,7 +7,7 @@ module.exports = {
       dest: "www/build"
     },
     sass: {
-      src: ['app/app.+(ios|md).scss'],
+      src: ['styles/app.+(ios|md).scss'],
       dest: 'www/build/css',
       include: ['node_modules/ionic-framework']
     },
@@ -16,7 +16,7 @@ module.exports = {
       dest: "www/build/fonts"
     },
     watch: {
-      sass: ['app/**/*.scss'],
+      sass: ['app/**/*.scss', 'styles/**/*.scss'],
       html: ['app/**/*.html'],
       livereload: [
         'www/build/**/*.html',
