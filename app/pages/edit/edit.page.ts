@@ -6,7 +6,8 @@ import {ListItem} from '../../data/list-item.interface';
 
 
 @Page({
-    templateUrl: 'build/pages/edit/edit.template.html'
+    templateUrl: 'build/pages/edit/edit.template.html',
+    providers: [ListItemService]
 })
 export class Edit {
     constructor(public nav: NavController, private _params: NavParams, private _service: ListItemService) {
