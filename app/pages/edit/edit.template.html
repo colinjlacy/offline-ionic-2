@@ -12,6 +12,9 @@
 				<ion-label fixed-label>Name</ion-label>
 				<input type="text" name="name" id="name" [(ngModel)]="listItem.name"/>
 			</ion-input>
+			<ion-item>
+				<ion-toggle checked="{{listItem.active}}" (change)="!listItem.active">Active</ion-toggle>
+			</ion-item>
 		</ion-list>
 
 		<ion-input>
