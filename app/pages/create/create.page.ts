@@ -17,7 +17,8 @@ export class Create {
             name: '',
             media: '',
             latitude: '',
-            longitude: ''
+            longitude: '',
+            active: true
         };
     }
 

@@ -27,9 +27,19 @@ export class ListItemService {
         return this.local.get('data').then(data => {
             let dataArray = JSON.parse(data);
             dataArray.push(item);
+            this.local.set('data', JSON.stringify(dataArray));
+        });
+    }
+
+    updateItem(item) {
+        return this.local.get('data').then(data => {
             const
-                insertData = JSON.stringify(dataArray);
-            this.local.set('data', insertData);
+                dataArray = JSON.parse(data),
+                ind = dataArray.findIndex(x => x.id === item.id);
+            dataArray[ind] = item;
+            console.log(dataArray);
+            this.local.set('data', JSON.stringify(dataArray));
+            return false;
         });
     }
 }

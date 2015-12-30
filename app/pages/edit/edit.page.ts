@@ -26,8 +26,7 @@ export class Edit {
     ];
 
     public save() {
-        console.log(this.listItem);
-        this.nav.pop();
+        this._service.updateItem(this.listItem).then(() => this.nav.pop());
     }
 
     ngOnInit() {

@@ -6,5 +6,6 @@ export interface ListItem {
     name: string,
     media: string,
     latitude: string,
-    longitude: string
+    longitude: string,
+    active: boolean
 }

@@ -22,11 +22,18 @@ export class List {
         return this.nav.push(Create, {length: this.listItems.length}, {}, () => null);
     }
 
-    goToEdit(index) {
-        return this.nav.push(Edit, {id: index}, {}, () => null);
+    goToEdit(id) {
+        return this.nav.push(Edit, {id: id}, {}, () => null);
+    }
+
+    toggleDone(id, e) {
+        e.stopPropagation();
+        let item = this.listItems.find(x => x.id === id);
+        item.active = !item.active;
+        this._service.updateItem(item);
     }
 
     onPageWillEnter() {
-        this._service.getItems().then(items => this.listItems = items);
+        return this._service.getItems().then(items => this.listItems = items);
     }
 }
