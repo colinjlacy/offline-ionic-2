@@ -1,7 +1,7 @@
 
 <ion-navbar *navbar>
 	<div *ngIf="listItem">
-		<ion-title>{{listItem.name}}</ion-title>
+		<ion-title>Edit Item</ion-title>
 	</div>
 </ion-navbar>
 
@@ -9,8 +9,8 @@
 	<div *ngIf="listItem">
 		<ion-list>
 			<ion-input>
-				<ion-label fixed-label>Description</ion-label>
-				<input type="text" name="description" id="description" [(ngModel)]="listItem.description"/>
+				<ion-label fixed-label>Name</ion-label>
+				<input type="text" name="name" id="name" [(ngModel)]="listItem.name"/>
 			</ion-input>
 		</ion-list>
 

@@ -5,7 +5,6 @@ export const
         {
             id: 1,
             name: 'Eat food',
-            description: 'Because breakfast is the most important meal of the day',
             media: '',
             latitude: '',
             longitude: ''
@@ -13,7 +12,6 @@ export const
         {
             id: 2,
             name: 'Fetch slippers',
-            description: 'Because Dad is my favorite',
             media: '',
             latitude: '',
             longitude: ''
@@ -21,7 +19,6 @@ export const
         {
             id: 3,
             name: 'Sit/stay',
-            description: 'Because patience is a virtue',
             media: '',
             latitude: '',
             longitude: ''
@@ -29,7 +26,6 @@ export const
         {
             id: 4,
             name: 'Chew bone',
-            description: 'Because bad bone, that\'s why',
             media: '',
             latitude: '',
             longitude: ''
@@ -37,7 +33,6 @@ export const
         {
             id: 5,
             name: 'Go for a walk',
-            description: 'Because everybody poops',
             media: '',
             latitude: '',
             longitude: ''
@@ -45,7 +40,6 @@ export const
         {
             id: 6,
             name: 'Chase the mail carrier',
-            description: 'Because fuck that guy',
             media: '',
             latitude: '',
             longitude: ''
@@ -61,7 +55,6 @@ export const
         {
             id: 9,
             name: 'Howl at the moon',
-            description: 'Because reasons',
             media: '',
             latitude: '',
             longitude: ''
@@ -69,7 +62,6 @@ export const
         {
             id: 10,
             name: 'Chase the cat',
-            description: 'Because we don\'t get along',
             media: '',
             latitude: '',
             longitude: ''

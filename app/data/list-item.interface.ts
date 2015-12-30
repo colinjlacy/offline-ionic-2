@@ -4,7 +4,6 @@
 export interface ListItem {
     id: number,
     name: string,
-    description: string,
     media: string,
     latitude: string,
     longitude: string
