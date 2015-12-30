@@ -22,4 +22,14 @@ export class ListItemService {
             return item;
         });
     }
+
+    addItem(item) {
+        return this.local.get('data').then(data => {
+            let dataArray = JSON.parse(data);
+            dataArray.push(item);
+            const
+                insertData = JSON.stringify(dataArray);
+            this.local.set('data', insertData);
+        });
+    }
 }

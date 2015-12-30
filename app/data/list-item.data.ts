@@ -45,7 +45,7 @@ export const
             longitude: ''
         },
         {
-            id: 8,
+            id: 7,
             name: 'Play with Sparky',
             description: 'Because he\'s awesome',
             media: '',
@@ -53,14 +53,14 @@ export const
             longitude: ''
         },
         {
-            id: 9,
+            id: 8,
             name: 'Howl at the moon',
             media: '',
             latitude: '',
             longitude: ''
         },
         {
-            id: 10,
+            id: 9,
             name: 'Chase the cat',
             media: '',
             latitude: '',

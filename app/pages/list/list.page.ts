@@ -18,15 +18,15 @@ export class List {
     public title: string;
     public listItems: ListItem[];
 
-    ngOnInit() {
-        return this._service.getItems().then(items => this.listItems = items);
-    }
-
     goToCreate() {
-        return this.nav.push(Create, {}, {}, () => null);
+        return this.nav.push(Create, {length: this.listItems.length}, {}, () => null);
     }
 
     goToEdit(index) {
         return this.nav.push(Edit, {id: index}, {}, () => null);
+    }
+
+    onPageWillEnter() {
+        this._service.getItems().then(items => this.listItems = items);
     }
 }
