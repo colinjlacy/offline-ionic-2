@@ -10,6 +10,8 @@ import {Edit} from './pages/edit/edit.page';
     templateUrl: 'build/app.html',
 })
 export class MyApp {
+    public rootPage;
+    private local;
     constructor(platform: Platform) {
 
         // this tells the tabs component which Pages

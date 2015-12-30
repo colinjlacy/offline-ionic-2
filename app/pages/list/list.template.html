@@ -15,7 +15,7 @@
 
 	<ion-list>
 		<ion-list-header>Todo:</ion-list-header>
-		<ion-item *ngFor="#item of listItems, #i=index" (click)="goToEdit(i)">
+		<ion-item *ngFor="#item of listItems" (click)="goToEdit(item.id)">
 			{{item.name}}
 		</ion-item>
 	</ion-list>

@@ -1,32 +1,33 @@
 
 <ion-navbar *navbar>
-
-	<ion-title>{{title}}</ion-title>
-
+	<div *ngIf="listItem">
+		<ion-title>{{listItem.name}}</ion-title>
+	</div>
 </ion-navbar>
 
 <ion-content class="page2">
-	<ion-list>
+	<div *ngIf="listItem">
+		<ion-list>
+			<ion-input>
+				<ion-label fixed-label>Description</ion-label>
+				<input type="text" name="description" id="description" [(ngModel)]="listItem.description"/>
+			</ion-input>
+		</ion-list>
+
 		<ion-input>
-			<ion-label fixed-label>Description</ion-label>
-			<input type="text" name="description" id="description" [(ngModel)]="item.description"/>
+			<button default block>Choose Image</button>
 		</ion-input>
-	</ion-list>
 
-	<ion-input>
-		<button default block>Choose Image</button>
-	</ion-input>
-
-	<ion-list>
+		<ion-list>
+			<ion-input>
+				<ion-label fixed-label>Location</ion-label>
+				<select [(ngModel)]="listItem.location">
+					<option *ngFor="#opt of options" [value]="opt.value">{{opt.label}}</option>
+				</select>
+			</ion-input>
+		</ion-list>
 		<ion-input>
-			<ion-label fixed-label>Location</ion-label>
-			<select [(ngModel)]="item.location">
-				<option *ngFor="#opt of options" [value]="opt.value">{{opt.label}}</option>
-			</select>
+			<button default block (click)="save()">Save</button>
 		</ion-input>
-	</ion-list>
-	<ion-input>
-		<button default block (click)="save()">Save</button>
-	</ion-input>
-
+	</div>
 </ion-content>

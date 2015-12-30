@@ -12,12 +12,13 @@ import {ListItem} from '../../data/list-item.interface';
 export class Edit {
     constructor(public nav: NavController, private _params: NavParams, private _service: ListItemService) {
         this.title = "Edit";
+        this.id = parseInt(this._params.get('id'));
     }
 
     public title: string;
     public listItem: ListItem;
+    public id: number;
 
-    public item: {description: string, location: string} = {};
     public options: Array = [
         {value: 'here', label: 'Current location'},
         {value: 'home', label: 'Home'},
@@ -25,12 +26,14 @@ export class Edit {
     ];
 
     public save() {
-        console.log(this.item);
+        console.log(this.listItem);
         this.nav.pop();
     }
 
     ngOnInit() {
-        return this._service.getItem(this._params.get('id')).then(item => this.listItem = item);
+        return this._service.getItem(this.id).then(item => {
+            this.listItem = item;
+        });
     }
 
 }
