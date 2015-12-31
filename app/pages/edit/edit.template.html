@@ -17,18 +17,18 @@
 			</ion-input>
 		</ion-list>
 
-		<ion-input>
-			<button default block>Choose Image</button>
-		</ion-input>
+		<!--<ion-input>-->
+			<!--<button default block>Choose Image</button>-->
+		<!--</ion-input>-->
 
-		<ion-list>
-			<ion-input>
-				<ion-label fixed-label>Location</ion-label>
-				<select [(ngModel)]="listItem.location">
-					<option *ngFor="#opt of options" [value]="opt.value">{{opt.label}}</option>
-				</select>
-			</ion-input>
-		</ion-list>
+		<!--<ion-list>-->
+			<!--<ion-input>-->
+				<!--<ion-label fixed-label>Location</ion-label>-->
+				<!--<select [(ngModel)]="listItem.location">-->
+					<!--<option *ngFor="#opt of options" [value]="opt.value">{{opt.label}}</option>-->
+				<!--</select>-->
+			<!--</ion-input>-->
+		<!--</ion-list>-->
 		<ion-input>
 			<button default block (click)="save()">Save</button>
 		</ion-input>
