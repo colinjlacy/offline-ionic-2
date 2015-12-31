@@ -25,7 +25,13 @@ export class Edit {
         {value: 'work', label: 'Work'}
     ];
 
+    public toggleActive(item) {
+        return item.active = !item.active;
+    }
+
     public save() {
+        console.log(this.nav);
+        console.log(this.listItem);
         this._service.updateItem(this.listItem).then(() => this.nav.pop());
     }
 

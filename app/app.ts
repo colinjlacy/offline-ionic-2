@@ -20,6 +20,8 @@ export class MyApp {
         this.local = new Storage(LocalStorage);
         //this.local.set('data', JSON.stringify(LIST_ITEMS));
 
+
+
         platform.ready().then(() => {
             // Do any necessary cordova or native calls here now that the platform is ready
 
