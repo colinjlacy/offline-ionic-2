@@ -17,8 +17,8 @@
 		<ion-list-header>Todo:</ion-list-header>
 		<ion-item *ngFor="#item of listItems">
 			{{item.name}}
-			<button item-right (click)="goToEdit(item.id)">Edit</button>
-			<button item-right (click)="toggleDone(item.id, $event)">Toggle</button>
+			<button item-right (click)="goToEdit(item._id)">Edit</button>
+			<button item-right (click)="toggleDone(item._id, $event)">Toggle</button>
 		</ion-item>
 	</ion-list>
 </ion-content>

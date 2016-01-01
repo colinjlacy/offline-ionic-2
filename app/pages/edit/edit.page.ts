@@ -12,7 +12,7 @@ import {ListItem} from '../../data/list-item.interface';
 export class Edit {
     constructor(public nav: NavController, private _params: NavParams, private _service: ListItemService) {
         this.title = "Edit";
-        this.id = parseInt(this._params.get('id'));
+        this.id = this._params.get('id');
     }
 
     public title: string;

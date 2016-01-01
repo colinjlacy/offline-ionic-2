@@ -5,13 +5,14 @@ import {ListItemService} from '../../data/list-item.service';
 import {ListItem} from '../../data/list-item.interface';
 import {Create} from '../create/create.page';
 import {Edit} from '../edit/edit.page';
+import {DataService} from '../../data/data.service';
 
 @Page({
     templateUrl: 'build/pages/list/list.template.html',
-    providers: [ListItemService]
+    providers: [ListItemService, DataService]
 })
 export class List {
-    constructor(private _service: ListItemService, public nav: NavController) {
+    constructor(private _service: ListItemService, public nav: NavController, private _data: DataService) {
         this.title = "List";
     }
 
@@ -28,7 +29,7 @@ export class List {
 
     toggleDone(id, e) {
         e.stopPropagation();
-        let item = this.listItems.find(x => x.id === id);
+        let item = this.listItems.find(x => x._id === id);
         item.active = !item.active;
         this._service.updateItem(item);
     }

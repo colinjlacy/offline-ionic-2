@@ -18,7 +18,7 @@ export class ListItemService {
     getItem(id) {
         let item;
         return this.local.get('data').then(data => {
-            item = (JSON.parse(data)).find(x => x.id === id);
+            item = (JSON.parse(data)).find(x => x._id == id);
             return item;
         });
     }
