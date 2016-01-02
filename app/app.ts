@@ -1,5 +1,5 @@
 import {App, Platform, Storage, LocalStorage} from 'ionic-framework/ionic';
-import {LIST_ITEMS} from './data/list-item.data';
+import {Data} from './data/list-item.data';
 
 import {List} from './pages/list/list.page';
 import {Create} from './pages/create/create.page';
@@ -21,7 +21,7 @@ export class MyApp {
         this.rootPage = List;
         this.local = new Storage(LocalStorage);
 
-        //this.local.set('data', JSON.stringify(LIST_ITEMS));
+        //this.local.set(Data._id, JSON.stringify(Data));
 
 
 

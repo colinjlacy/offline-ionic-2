@@ -28,13 +28,14 @@ export class List {
     }
 
     toggleDone(id, e) {
-        e.stopPropagation();
         let item = this.listItems.find(x => x._id === id);
         item.active = !item.active;
         this._service.updateItem(item);
     }
 
     onPageWillEnter() {
-        return this._service.getItems().then(items => this.listItems = items);
+        return this._service.getLists().then(items => {
+            this.listItems = items;
+        });
     }
 }
