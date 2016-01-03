@@ -94,7 +94,7 @@ import {Injectable} from 'angular2/core';
 export const Data: Object = {
     _id: "1",
     name: "Dog Day",
-    owner: "1",
+    owner: "inguiesingeregrallyinesp",
     collaborators: [],
     items: [
         {

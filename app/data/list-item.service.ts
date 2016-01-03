@@ -16,15 +16,16 @@ export class ListItemService {
     getLists() {
         return new Promise((res, rej) => {
             this.local.get('1').then(data => {
-                console.log(JSON.parse(data));
-                res((JSON.parse(data)).items);
-                this._data.get('1').then(
-                    doc => {
-                        console.log(doc);
-                        this.local.set('1', JSON.stringify(doc));
-                    },
-                    err => console.log(err)
-                );
+                if(data) {
+                    res((JSON.parse(data)).items);
+                    this._data.get('1').then(
+                        doc => {
+                            console.log(doc);
+                            this.local.set('1', JSON.stringify(doc));
+                        },
+                        err => this._data.post(JSON.parse(data))
+                    );
+                }
             });
         })
     }

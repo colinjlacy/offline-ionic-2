@@ -1,17 +1,15 @@
 /**
  * Created by colinjlacy on 12/31/15.
  */
-import {Config} from '../config/config';
+import {Data} from './list-item.data';
 
-export class DataService extends Config {
+export class DataService {
     //constructor() {
     constructor() {
-        // inherit API key properties
-        super();
 
         // create local DB instances
-        this.remoteDB = new PouchDB(`https://${this.cloudant.apiKey}:${this.cloudant.password}@colinjlacy.cloudant.com/lists`);
-        this.localDB = new PouchDB('lists');
+        this.remoteDB = `http://localhost:4984/lists`;
+        this.localDB = new PouchDB('cb_lists');
 
         // config sync
         this.localDB.sync(this.remoteDB, {
@@ -23,21 +21,27 @@ export class DataService extends Config {
                 console.log("Change occurred.  Synchronizing.");
             }
         });
+
     }
 
     get(id) {
         return this.localDB.get(id).then(doc => doc);
     }
 
+    post(doc) {
+        return this.localDB.post(doc);
+    }
+
     syncItems(id, list) {
         let addArray = [];
         this.localDB.get(id).then(doc => {
             list.items.forEach(item => {
-                if(doc.items.find(x => x._id === item._id) === null) {
+                if(!doc.items.find(x => x._id === item._id)) {
                     addArray.push(item);
                 }
             });
             if(addArray.length) {
+                console.log(addArray);
                 doc.items = doc.items.concat(addArray);
                 this.localDB.put(doc);
             }
@@ -48,8 +52,6 @@ export class DataService extends Config {
         this.localDB.get('1').then(doc => {
             doc.items = doc.items.map(x => {
                 if(x._id === item._id) {
-                    console.log(x);
-                    console.log(item);
                     return item;
                 } else {
                     return x;
