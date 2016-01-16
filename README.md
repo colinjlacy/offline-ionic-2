@@ -20,7 +20,7 @@ Uncomment that line to add data, and then run the application from the project r
 $ ionic serve
 ```
 
-That will start up a new browser window with the application started.  Be sure to re-comment the data insertion in `app/app.ts` before you refresh or change any other code (which will cause a refresh) as that will cause the data to be inserted again.
+That will start up a new browser window with the application started.  **Be sure to re-comment the data insertion in `app/app.ts` before you refresh or change any other code (which will cause a refresh) as that will cause the data to be inserted again.**
  
 ### Problems
 
