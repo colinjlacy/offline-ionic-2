@@ -9,7 +9,7 @@ export class DataService {
 
         // create local DB instances
         this.remoteDB = `http://localhost:4984/lists`;
-        this.localDB = new PouchDB('cb_lists');
+        this.localDB = new PouchDB('pouch_lists');
 
         // config sync
         this.localDB.sync(this.remoteDB, {
@@ -57,7 +57,16 @@ export class DataService {
                     return x;
                 }
             });
-            this.localDB.put(doc);
+            this.localDB.upsert(doc);
+        });
+    }
+
+    updateDoc(doc) {
+        this.localDB.get(doc._id).then(data => {
+            console.log(data);
+            let rev = data._rev;
+            console.log(data._rev);
+            this.localDB.put(doc, doc._id, rev).then(res => console.log(res), err => console.log(err));
         });
     }
 

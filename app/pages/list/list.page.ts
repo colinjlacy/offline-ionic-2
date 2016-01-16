@@ -34,8 +34,10 @@ export class List {
     }
 
     onPageWillEnter() {
-        return this._service.getLists().then(items => {
-            this.listItems = items;
+        console.log('page will enter');
+        return this._service.getLists().then(doc => {
+            console.log(doc);
+            this.listItems = doc.items;
         });
     }
 }

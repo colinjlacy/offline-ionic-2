@@ -13,6 +13,9 @@ export class Edit {
     constructor(public nav: NavController, private _params: NavParams, private _service: ListItemService) {
         this.title = "Edit";
         this.id = this._params.get('id');
+        this._service.getItem(this.id).then(item => {
+            this.listItem = item;
+        });
     }
 
     public title: string;
@@ -35,8 +38,8 @@ export class Edit {
         this._service.updateItem(this.listItem).then(() => this.nav.pop());
     }
 
-    ngOnInit() {
-        return this._service.getItem(this.id).then(item => {
+    onPageWillEnter() {
+        this._service.getItem(this.id).then(item => {
             this.listItem = item;
         });
     }

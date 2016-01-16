@@ -13,7 +13,7 @@
 				<input type="text" name="name" id="name" [(ngModel)]="listItem.name"/>
 			</ion-input>
 			<ion-input>
-				<ion-toggle checked="{{listItem.active}}" (click)="toggleActive(listItem)">Active</ion-toggle>
+				<ion-toggle value="apple" [(ngModel)]="listItem.active">Active</ion-toggle>
 			</ion-input>
 		</ion-list>
 
